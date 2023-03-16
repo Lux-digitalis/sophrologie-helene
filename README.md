@@ -1,59 +1,14 @@
-<div style="text-align:center;">
-    <img alt="React template" src="./src/Assets/ReactTemplateLogo.svg" height="200px"/>
-    <h1>Getting Started with E-constellatio's React template</h1>
+<div align="center">
+    <img src="https://github.com/Lux-digitalis/sophrologie-helene/blob/main/src/Assets/Logo.svg" alt="Logo" height="100" width="100">
+    <h1>Sophrologie Hélène GRASS</h1>
 </div>
 
-## Available Scripts
+Bonjour à tous et à toutes !
 
-In the project directory, you can run:
+Bienvenue dans le dépôt contenant le code source du site internet du cabinet de sophrologie de Madame Hélène GRASS.
 
-### `npm start`
+## Le cabinet
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Avec son cabinet basé sur Besançon madame GRASS propose ses services variés de thérapie. Sophrologie, hypnose ou même reiki trouver la thérapie qui vous correspond. Sa pléthore de diplômes délivré par divers organismes, témoigne de ses capacités. Reconnue par ses patients elle saura vous guider et vous écouter.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-Test will use `.env.development` file which contain all environment variables.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more
-information.
-
-### `npm run build_preprod`
-
-Builds the app for pre-production to the `build` folder.\
-It will use `.env.preproduction` file which contain all pre-production environment variables.\
-It correctly bundles React in pre-production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run build_prod`
-
-Like for `npm run build_preprod` this command do a build but use `.env.production` file which contain all production
-variables.
-
-### `npm run coverage`
-
-Run tests and compute coverage of your code.
-
-A suitable command to run while creating your tests. An alternative to `npm test` with more information like coverage of
-your code by tests. Be careful `npm run coverage` is heavier and makes tests slower. Moreover, this command will run
-continuously as long as you don't terminate it. This implies that the command needs its own terminal if you don't want
-to run and kill it several times in a single development session.
-
-### `npm run lint`
-
-Run linter and tell you which lines don't respect rules. For more information about rules
-see [wiki](https://github.com/Correlatio-company/react-template/wiki).
-
-## Learn More
-
-You can learn more in the [react-template wki](https://github.com/Correlatio-company/react-template/wiki).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+**N'hésitez plus ! Et visitez son [site internet](https://www.sophro-helene-besancon.fr) !**
