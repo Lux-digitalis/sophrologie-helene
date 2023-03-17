@@ -1,10 +1,10 @@
 import React from "react";
-import DummyPage from "./Pages/DummyPage";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App(): JSX.Element {
   return (
     <div>
-      <DummyPage />
+      <Navbar />
     </div>
   );
 }
