@@ -23,12 +23,15 @@ export default function Navbar(props: INavbarProps): JSX.Element {
   });
 
   React.useEffect(() => {
-    const DebouncedHandleResize = Debounce(function handleResize(): void {
-      SetDimensions({
-        height: window.innerHeight,
-        width: window.innerWidth,
-      });
-    }, 1000);
+    const DebouncedHandleResize: () => void = Debounce(
+      function HandleResize(): void {
+        SetDimensions({
+          height: window.innerHeight,
+          width: window.innerWidth,
+        });
+      },
+      1000
+    );
 
     window.addEventListener("resize", DebouncedHandleResize);
 
@@ -61,7 +64,7 @@ export default function Navbar(props: INavbarProps): JSX.Element {
           onClick={HandleChangeCheckValue}
         />
         <div className={navbarStyle.burgerLines}>
-          {[...Array(3).fill(null)].map((e, i) => (
+          {[...Array(3)].map((e, i) => (
             <span className={navbarStyle.burgerLine} key={i}></span>
           ))}
         </div>
