@@ -8,6 +8,7 @@ function debounce(fn: () => void, ms: number) {
     clearTimeout(timer as number | undefined);
     timer = setTimeout(() => {
       timer = null;
+      // @ts-ignore -- I don't find type of this and arguments.
       fn.apply(this, arguments);
     }, ms);
   };
