@@ -12,7 +12,7 @@ function App(): JSX.Element {
   return (
     <div>
       <Navbar
-        IS_CHECK={IS_CHECK}
+        isCheck={IS_CHECK}
         HandleChangeCheckValue={HandleChangeCheckValue}
       />
       <Footer />

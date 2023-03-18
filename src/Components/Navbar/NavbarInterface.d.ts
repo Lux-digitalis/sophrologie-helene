@@ -1,4 +1,4 @@
 interface INavbarProps {
-  IS_CHECK: boolean;
+  isCheck: boolean;
   HandleChangeCheckValue: () => void;
 }

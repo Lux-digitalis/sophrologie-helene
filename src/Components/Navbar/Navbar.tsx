@@ -3,19 +3,20 @@ import navbarStyle from "./Navbar.module.sass";
 import Logo from "../../Assets/Logo.svg";
 
 function Debounce(fn: () => void, ms: number): () => void {
-  let timer: string | number | NodeJS.Timeout | null | undefined;
+  const Self: (fn: () => void, ms: number) => () => void = Debounce;
+  const ARGS: Array<number | (() => void)> = [fn, ms];
+  let timer: NodeJS.Timeout | number | string | null | undefined;
   return (): void => {
     clearTimeout(timer as number | undefined);
     timer = setTimeout(() => {
       timer = null;
-      // @ts-ignore -- I don't find type of this and arguments.
-      fn.apply(this, arguments);
+      fn.apply(Self, ARGS as []);
     }, ms);
   };
 }
 
-export default function Navbar(props: INavbarProps): JSX.Element {
-  const {IS_CHECK, HandleChangeCheckValue} = props;
+export default function Navbar(props: Readonly<INavbarProps>): JSX.Element {
+  const {isCheck, HandleChangeCheckValue} = props;
 
   const [DIMENSIONS, SetDimensions] = React.useState({
     height: window.innerHeight,
@@ -64,7 +65,7 @@ export default function Navbar(props: INavbarProps): JSX.Element {
           onClick={HandleChangeCheckValue}
         />
         <div className={navbarStyle.burgerLines}>
-          {[...Array(3)].map((e, i) => (
+          {[null, null, null].map((e, i) => (
             <span className={navbarStyle.burgerLine} key={i}></span>
           ))}
         </div>
@@ -73,12 +74,10 @@ export default function Navbar(props: INavbarProps): JSX.Element {
         id={navbarStyle.menuMobile}
         style={{
           height:
-            IS_CHECK && DIMENSIONS.width < 1350
-              ? "calc(100vh - 260px)"
-              : "auto",
+            isCheck && DIMENSIONS.width < 1350 ? "calc(100vh - 260px)" : "auto",
         }}
       >
-        {IS_CHECK && DIMENSIONS.width < 1350
+        {isCheck && DIMENSIONS.width < 1350
           ? SECTIONS.slice(1).map((section, key) => (
               <a
                 href={section.href}
