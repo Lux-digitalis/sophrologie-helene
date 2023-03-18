@@ -1,0 +1,100 @@
+#navbar
+  display: flex
+  width: 100%
+  flex-direction: column
+
+#navigation
+  width: 100%
+  display: flex
+  align-items: center
+  height: 100px
+
+#menuMobile
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  width: 100%
+
+.logo
+  width: 116px
+  height: 67px
+  margin: 16.5px 0 16.5px 44px
+
+.listElement
+  text-decoration: none
+  color: #2F6252
+  font-size: 26px
+  line-height: 32px
+  margin-right: 44px
+
+.listElement:first-of-type
+  margin-right: auto !important
+  margin-left: 20px
+
+.listElement:nth-of-type(n+2):hover
+  border-bottom: 1px solid #2F6252
+
+#burgerCheck
+  display: none
+  position: absolute
+  right: 44px
+  height: 24px
+  width: 40px
+  margin: 0
+
+#burgerCheck:hover
+  cursor: pointer
+
+#burgerCheck:checked ~ .burgerLines .burgerLine:first-of-type
+  transform: rotate(45deg) translateY(10px) translateX(10px)
+  transition: transform 0.3s ease-in-out
+
+#burgerCheck:checked ~ .burgerLines .burgerLine:nth-of-type(2)
+  transform: translateX(40px)
+  transition: transform 0.3s ease-in-out
+
+#burgerCheck:checked ~ .burgerLines .burgerLine:last-of-type
+  transform: rotate(-45deg) translateY(-10px) translateX(10px)
+  transition: transform 0.3s ease-in-out
+
+.burgerLines
+  display: none
+  flex-direction: column
+  justify-content: space-between
+  height: 30px
+  width: 40px
+  overflow: hidden
+
+.burgerLine
+  display: none
+  transition: transform 0.3s ease-in-out
+
+.burgerLine:first-of-type.open
+  transform: rotate(45deg)
+
+@media screen and (max-width: 1350px)
+  #burgerCheck
+    display: flex
+    opacity: 0
+    z-index: 1
+
+  .burgerLines
+    display: flex
+    margin-right: 44px
+
+  .burgerLine
+    display: flex
+    background-color: #2F6252
+    height: 3px
+    width: 40px
+    border-radius: 4px
+
+  .listElement:nth-of-type(n+2)
+    display: none
+
+@media screen and (max-width: 440px)
+  .listElement
+    display: none
+
+  .logo
+    margin-right: auto

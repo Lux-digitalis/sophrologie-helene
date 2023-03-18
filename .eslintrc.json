@@ -6,10 +6,9 @@
   "extends": ["plugin:react/recommended", "plugin:eslint-comments/recommended"],
   "overrides": [
     {
-      "files": ["**/*.test.*"],
+      "files": ["*.test.*"],
       "plugins": ["jest"],
       "env": {
-        "jest": true,
         "jest/globals": true
       },
       "extends": ["plugin:jest/recommended"],
@@ -98,7 +97,7 @@
         "leadingUnderscore": "forbid",
         "trailingUnderscore": "forbid",
         "types": ["boolean"],
-        "prefix": ["IS_", "is", "HAS_", "has"]
+        "prefix": ["IS_", "is"]
       },
       {
         "selector": [
@@ -140,7 +139,7 @@
         "format": ["UPPER_CASE"],
         "modifiers": ["const"],
         "types": ["boolean"],
-        "prefix": ["IS_", "HAS_"],
+        "prefix": ["IS_"],
         "leadingUnderscore": "forbid",
         "trailingUnderscore": "forbid"
       },
@@ -162,7 +161,7 @@
         "format": ["UPPER_CASE"],
         "modifiers": ["readonly"],
         "types": ["boolean"],
-        "prefix": ["IS_", "HAS_"],
+        "prefix": ["IS_"],
         "leadingUnderscore": "forbid",
         "trailingUnderscore": "forbid"
       },
@@ -188,7 +187,7 @@
         ],
         "format": ["PascalCase"],
         "types": ["boolean"],
-        "prefix": ["is", "has"],
+        "prefix": ["is"],
         "leadingUnderscore": "forbid",
         "trailingUnderscore": "forbid"
       },
@@ -202,7 +201,7 @@
         "selector": ["parameter", "variable"],
         "format": ["snake_case"],
         "types": ["boolean"],
-        "prefix": ["is_", "has_"],
+        "prefix": ["is_"],
         "leadingUnderscore": "forbid",
         "trailingUnderscore": "forbid"
       },
@@ -297,7 +296,7 @@
     "@typescript-eslint/no-use-before-define": "warn",
     "@typescript-eslint/no-useless-constructor": "warn",
     "@typescript-eslint/require-await": "error",
-    "@typescript-eslint/return-await": ["warn", "always"],
+    "@typescript-eslint/return-await": "warn",
 
     "array-callback-return": ["error", {"checkForEach": true}],
     "constructor-super": "error",
