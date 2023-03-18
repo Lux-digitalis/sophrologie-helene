@@ -6,7 +6,7 @@ function App(): JSX.Element {
   const [IS_CHECK, SetCheck] = React.useState<boolean>(false);
 
   const HandleChangeCheckValue = (): void => {
-    SetCheck((currentValue) => !currentValue);
+    SetCheck((is_checked) => !is_checked);
   };
 
   return (

@@ -2,9 +2,9 @@ import React from "react";
 import navbarStyle from "./Navbar.module.sass";
 import Logo from "../../Assets/Logo.svg";
 
-function debounce(fn: () => void, ms: number) {
-  let timer: string | number | NodeJS.Timeout | undefined | null;
-  return () => {
+function Debounce(fn: () => void, ms: number): () => void {
+  let timer: string | number | NodeJS.Timeout | null | undefined;
+  return (): void => {
     clearTimeout(timer as number | undefined);
     timer = setTimeout(() => {
       timer = null;
@@ -23,17 +23,17 @@ export default function Navbar(props: INavbarProps): JSX.Element {
   });
 
   React.useEffect(() => {
-    const debouncedHandleResize = debounce(function handleResize(): void {
+    const DebouncedHandleResize = Debounce(function handleResize(): void {
       SetDimensions({
         height: window.innerHeight,
         width: window.innerWidth,
       });
     }, 1000);
 
-    window.addEventListener("resize", debouncedHandleResize);
+    window.addEventListener("resize", DebouncedHandleResize);
 
     return () => {
-      window.removeEventListener("resize", debouncedHandleResize);
+      window.removeEventListener("resize", DebouncedHandleResize);
     };
   });
 
@@ -61,7 +61,7 @@ export default function Navbar(props: INavbarProps): JSX.Element {
           onClick={HandleChangeCheckValue}
         />
         <div className={navbarStyle.burgerLines}>
-          {[...Array(3)].map((e, i) => (
+          {[...Array(3).fill(null)].map((e, i) => (
             <span className={navbarStyle.burgerLine} key={i}></span>
           ))}
         </div>
